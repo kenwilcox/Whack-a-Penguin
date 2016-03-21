@@ -58,6 +58,10 @@ class GameScene: SKScene {
     for i in 0 ..< 5 { createSlotAt(CGPoint(x: 100 + (i * 170), y: 230)) }
     for i in 0 ..< 4 { createSlotAt(CGPoint(x: 180 + (i * 170), y: 140)) }
     
+    // pre load sounds
+    _ = SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion:false)
+    _ = SKAction.playSoundFileNamed("whack.caf", waitForCompletion:false)
+    
     reset()
   }
   
