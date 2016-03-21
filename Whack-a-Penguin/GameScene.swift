@@ -47,6 +47,37 @@ class GameScene: SKScene {
   
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     /* Called when a touch begins */
+    if let touch = touches.first {
+      let location = touch.locationInNode(self)
+      let nodes = nodesAtPoint(location)
+      
+      for node in nodes {
+        if node.name == "charFriend" {
+          // they shouldn't have whacked this penguin
+          let whackSlot = node.parent!.parent as! WhackSlot
+          if !whackSlot.visible { continue }
+          if whackSlot.isHit { continue }
+          
+          whackSlot.hit()
+          score -= 5
+          
+          runAction(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion:false))
+        } else if node.name == "charEnemy" {
+          // they should have whacked this one
+          let whackSlot = node.parent!.parent as! WhackSlot
+          if !whackSlot.visible { continue }
+          if whackSlot.isHit { continue }
+          
+          whackSlot.charNode.xScale = 0.85
+          whackSlot.charNode.yScale = 0.85
+          
+          whackSlot.hit()
+          score += 1
+          
+          runAction(SKAction.playSoundFileNamed("whack.caf", waitForCompletion:false))
+        }
+      }
+    }
   }
   
   override func update(currentTime: CFTimeInterval) {
