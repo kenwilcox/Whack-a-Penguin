@@ -26,6 +26,8 @@
 		BE1A85DE1C9F8FC2007E7052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE1A85E11C9F8FC2007E7052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE1A85E31C9F8FC2007E7052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE1A85E91C9F919B007E7052 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		BE1A85EA1C9F919B007E7052 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,8 @@
 		BE1A85C71C9F8FC2007E7052 = {
 			isa = PBXGroup;
 			children = (
+				BE1A85E91C9F919B007E7052 /* LICENSE.md */,
+				BE1A85EA1C9F919B007E7052 /* README.md */,
 				BE1A85D21C9F8FC2007E7052 /* Whack-a-Penguin */,
 				BE1A85D11C9F8FC2007E7052 /* Products */,
 			);
