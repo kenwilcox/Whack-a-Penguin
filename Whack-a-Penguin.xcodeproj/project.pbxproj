@@ -30,6 +30,8 @@
 		BE1A85E91C9F919B007E7052 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BE1A85EA1C9F919B007E7052 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE1A85ED1C9F9275007E7052 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BE1A85F01C9FA1C8007E7052 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		BE1A85F11C9FA1D2007E7052 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		BE1A85D21C9F8FC2007E7052 /* Whack-a-Penguin */ = {
 			isa = PBXGroup;
 			children = (
+				BE1A85EF1C9FA1A6007E7052 /* Sounds */,
 				BE1A85D31C9F8FC2007E7052 /* AppDelegate.swift */,
 				BE1A85D51C9F8FC2007E7052 /* GameScene.sks */,
 				BE1A85D71C9F8FC2007E7052 /* GameScene.swift */,
@@ -75,6 +78,15 @@
 				BE1A85E31C9F8FC2007E7052 /* Info.plist */,
 			);
 			path = "Whack-a-Penguin";
+			sourceTree = "<group>";
+		};
+		BE1A85EF1C9FA1A6007E7052 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BE1A85F11C9FA1D2007E7052 /* whackBad.caf */,
+				BE1A85F01C9FA1C8007E7052 /* whack.caf */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +121,7 @@
 				TargetAttributes = {
 					BE1A85CF1C9F8FC2007E7052 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2367R6DXA6;
 					};
 				};
 			};
@@ -265,10 +278,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Whack-a-Penguin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nx.Whack-a-Penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -276,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Whack-a-Penguin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nx.Whack-a-Penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
