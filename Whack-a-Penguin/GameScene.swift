@@ -10,8 +10,18 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-  var popupTime = 0.85
+  
   var slots = [WhackSlot]()
+  
+  var popupTime = 0.85
+  var maxRounds = 30
+  
+  var rounds: SKLabelNode!
+  var numRounds: Int = 0 {
+    didSet {
+      rounds.text = "\(maxRounds - numRounds) "
+    }
+  }
   
   var gameScore: SKLabelNode!
   var score: Int = 0 {
@@ -34,6 +44,13 @@ class GameScene: SKScene {
     gameScore.horizontalAlignmentMode = .Left
     gameScore.fontSize = 48
     addChild(gameScore)
+    
+    rounds = SKLabelNode(fontNamed: "Chalkduster")
+    rounds.text = " 30 "
+    rounds.position = CGPoint(x: self.frame.width - rounds.frame.size.width, y: 8)
+    rounds.horizontalAlignmentMode = .Right
+    rounds.fontSize = 48
+    addChild(rounds)
     
     for i in 0 ..< 5 { createSlotAt(CGPoint(x: 100 + (i * 170), y: 410)) }
     for i in 0 ..< 4 { createSlotAt(CGPoint(x: 180 + (i * 170), y: 320)) }
@@ -92,6 +109,21 @@ class GameScene: SKScene {
   }
   
   func createEnemy() {
+    numRounds += 1
+    
+    if numRounds >= maxRounds {
+      for slot in slots {
+        slot.hide()
+      }
+      
+      let gameOver = SKSpriteNode(imageNamed: "gameOver")
+      gameOver.position = CGPoint(x: 512, y: 384)
+      gameOver.zPosition = 1
+      addChild(gameOver)
+      
+      return
+    }
+    
     popupTime *= 0.991
     
     slots = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(slots) as! [WhackSlot]
