@@ -29,6 +29,7 @@ class GameScene: SKScene {
       gameScore.text = "Score: \(score)"
     }
   }
+  var gameOver: SKSpriteNode!
   
   override func didMoveToView(view: SKView) {
     /* Setup your scene here */
@@ -57,9 +58,7 @@ class GameScene: SKScene {
     for i in 0 ..< 5 { createSlotAt(CGPoint(x: 100 + (i * 170), y: 230)) }
     for i in 0 ..< 4 { createSlotAt(CGPoint(x: 180 + (i * 170), y: 140)) }
     
-    RunAfterDelay(1) { [unowned self] in
-      self.createEnemy()
-    }
+    reset()
   }
   
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -92,6 +91,8 @@ class GameScene: SKScene {
           score += 1
           
           runAction(SKAction.playSoundFileNamed("whack.caf", waitForCompletion:false))
+        } else if node.name == "gameOver" {
+          reset()
         }
       }
     }
@@ -116,11 +117,12 @@ class GameScene: SKScene {
         slot.hide()
       }
       
-      let gameOver = SKSpriteNode(imageNamed: "gameOver")
+      gameOver = SKSpriteNode(imageNamed: "gameOver")
+      gameOver.name = "gameOver"
       gameOver.position = CGPoint(x: 512, y: 384)
       gameOver.zPosition = 1
       addChild(gameOver)
-      
+
       return
     }
     
@@ -138,6 +140,16 @@ class GameScene: SKScene {
     let maxDelay = popupTime * 2
     
     RunAfterDelay(Random.double(min: minDelay, max: maxDelay)) { [unowned self] in
+      self.createEnemy()
+    }
+  }
+  
+  func reset() {
+    popupTime = 0.85
+    score = 0
+    numRounds = 0
+    gameOver?.removeFromParent()
+    RunAfterDelay(1) { [unowned self] in
       self.createEnemy()
     }
   }
