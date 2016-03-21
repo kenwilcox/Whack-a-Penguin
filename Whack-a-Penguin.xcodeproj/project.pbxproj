@@ -15,6 +15,7 @@
 		BE1A85DF1C9F8FC2007E7052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1A85DE1C9F8FC2007E7052 /* Assets.xcassets */; };
 		BE1A85E21C9F8FC2007E7052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1A85E01C9F8FC2007E7052 /* LaunchScreen.storyboard */; };
 		BE1A85EE1C9F9275007E7052 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A85ED1C9F9275007E7052 /* Helper.swift */; };
+		BE1A85F31CA00B52007E7052 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A85F21CA00B52007E7052 /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BE1A85ED1C9F9275007E7052 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BE1A85F01C9FA1C8007E7052 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		BE1A85F11C9FA1D2007E7052 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		BE1A85F21CA00B52007E7052 /* WhackSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				BE1A85D71C9F8FC2007E7052 /* GameScene.swift */,
 				BE1A85D91C9F8FC2007E7052 /* GameViewController.swift */,
 				BE1A85ED1C9F9275007E7052 /* Helper.swift */,
+				BE1A85F21CA00B52007E7052 /* WhackSlot.swift */,
 				BE1A85DB1C9F8FC2007E7052 /* Main.storyboard */,
 				BE1A85DE1C9F8FC2007E7052 /* Assets.xcassets */,
 				BE1A85E01C9F8FC2007E7052 /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1A85D81C9F8FC2007E7052 /* GameScene.swift in Sources */,
+				BE1A85F31CA00B52007E7052 /* WhackSlot.swift in Sources */,
 				BE1A85DA1C9F8FC2007E7052 /* GameViewController.swift in Sources */,
 				BE1A85D41C9F8FC2007E7052 /* AppDelegate.swift in Sources */,
 				BE1A85EE1C9F9275007E7052 /* Helper.swift in Sources */,
